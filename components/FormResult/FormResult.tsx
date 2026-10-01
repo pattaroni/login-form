@@ -1,24 +1,27 @@
 import { FormValues } from "@/types/form";
 import styles from "./FormResult.module.scss";
+import { Modal } from "../Modal/Modal";
+import { Button } from "../Button/Button";
+import Image from "next/image";
 
 interface FormResultProps {
   data: FormValues;
+  clearForm: () => void;
 }
 
-export default function FormResult({ data }: FormResultProps) {
+export default function FormResult({ data, clearForm }: FormResultProps) {
   return (
-    <section className={styles.card}>
-      <h2 className={styles.title}>Submitted data</h2>
-      <dl className={styles.list}>
-        <dt className={styles.term}>First name</dt>
-        <dd className={styles.value}>{data.firstName}</dd>
+    <Modal onClose={clearForm} classname={styles.modal}>
+      <div className={styles.close} onClick={clearForm}>
+        <Image src={"/close.svg"} width={20} height={20} alt="" />
+      </div>
 
-        <dt className={styles.term}>Email</dt>
-        <dd className={styles.value}>{data.email}</dd>
-
-        <dt className={styles.term}>Password</dt>
-        <dd className={styles.value}>{"•".repeat(data.password.length)}</dd>
-      </dl>
-    </section>
+      <h2>Success!</h2>
+      <p>Registration successful!!</p>
+      <h3 className={styles.name}>{data.firstName}</h3>
+      <Button classname={styles.button} onClick={clearForm}>
+        Close
+      </Button>
+    </Modal>
   );
 }

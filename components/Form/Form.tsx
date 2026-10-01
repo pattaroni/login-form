@@ -1,6 +1,9 @@
+"use client";
+
 import { FormValues } from "@/types/form";
 import React, { useState } from "react";
 import styles from "./Form.module.scss";
+import { Button } from "../Button/Button";
 
 interface FormProps {
   setForm: (data: FormValues) => void;
@@ -19,7 +22,6 @@ export default function Form({ setForm }: FormProps) {
       email: String(formData.get("email") ?? ""),
       password: String(formData.get("password") ?? ""),
     });
-    form.reset();
   };
 
   const handleChange = () => {
@@ -68,9 +70,7 @@ export default function Form({ setForm }: FormProps) {
               Show/Hide Password
             </label>
           </fieldset>
-          <button type="submit" className={styles.button}>
-            Submit
-          </button>
+          <Button type="submit">Submit</Button>
         </form>
       </section>
     </>

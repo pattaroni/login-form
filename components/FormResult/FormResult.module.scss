@@ -1,33 +1,32 @@
-.card {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: #fff;
-  border: 2px solid #4a90e2;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px #0000001a;
+.modal {
+  flex-direction: column;
+  justify-content: space-around !important;
+  gap: 20px;
 }
 
-.title {
-  margin-bottom: 16px;
-  font-size: 18px;
-  color: #4a90e2;
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: aliceblue;
+  }
 }
 
-.list {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 8px 16px;
-  margin: 0;
+.name {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.term {
-  font-weight: 600;
-  color: #333;
-}
-
-.value {
-  margin: 0;
-  color: #555;
-  overflow-wrap: anywhere;
+.button {
+  text-transform: uppercase;
 }
