@@ -27,6 +27,29 @@
   font-weight: bold;
 }
 
+.letter {
+  display: inline-block;
+  animation: fadeIn 0.3s ease forwards;
+  opacity: 0;
+}
+
+@for $i from 1 through 40 {
+  .letter:nth-child(#{$i}) {
+    animation-delay: #{$i * 0.05}s;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .button {
   text-transform: uppercase;
 }

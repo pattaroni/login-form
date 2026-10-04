@@ -3,6 +3,7 @@ import styles from "./FormResult.module.scss";
 import { Modal } from "../Modal/Modal";
 import { Button } from "../Button/Button";
 import Image from "next/image";
+import { writeName } from "@/lib/writeName";
 
 interface FormResultProps {
   data: FormValues;
@@ -18,7 +19,13 @@ export default function FormResult({ data, clearForm }: FormResultProps) {
 
       <h2>Success!</h2>
       <p>Registration successful!!</p>
-      <h3 className={styles.name}>{data.firstName}</h3>
+      <h3 className={styles.name}>
+        {writeName(data.firstName).map((letter, idx) => (
+          <span key={idx} className={styles.letter}>
+            {letter}
+          </span>
+        ))}
+      </h3>
       <Button classname={styles.button} onClick={clearForm}>
         Close
       </Button>
