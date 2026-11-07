@@ -43,7 +43,7 @@
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 4px;
-  margin-bottom: 30px;
+  margin-bottom: 4px;
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
@@ -53,4 +53,39 @@
     box-shadow: 0 0 5px hsla(212, 72%, 59%, 0.5);
     outline: none;
   }
+
+  &.valid,
+  &.valid:focus {
+    border-color: #2e9e4f;
+  }
+
+  &.valid:focus {
+    box-shadow: 0 0 5px rgba(46, 158, 79, 0.5);
+  }
+
+  &.invalid,
+  &.invalid:focus {
+    border-color: #d93025;
+  }
+
+  &.invalid:focus {
+    box-shadow: 0 0 5px rgba(217, 48, 37, 0.5);
+  }
+}
+
+.error {
+  min-height: 20px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #d93025;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
 }

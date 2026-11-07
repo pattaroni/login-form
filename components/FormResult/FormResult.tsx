@@ -11,6 +11,8 @@ interface FormResultProps {
 }
 
 export default function FormResult({ data, clearForm }: FormResultProps) {
+  const fullName = data.firstName + " " + data.lastName;
+
   return (
     <Modal onClose={clearForm} classname={styles.modal}>
       <div className={styles.close} onClick={clearForm}>
@@ -20,9 +22,9 @@ export default function FormResult({ data, clearForm }: FormResultProps) {
       <h2>Success!</h2>
       <p>Registration successful!!</p>
       <h3 className={styles.name}>
-        {writeName(data.firstName).map((letter, idx) => (
+        {writeName(fullName).map((letter, idx) => (
           <span key={idx} className={styles.letter}>
-            {letter}
+            {letter === " " ? " " : letter}
           </span>
         ))}
       </h3>

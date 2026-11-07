@@ -14,9 +14,15 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: linear-gradient(135deg, #357abd, #2a6ba0);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  &:disabled {
+    background: #b8c4d0;
+    box-shadow: none;
+    cursor: not-allowed;
   }
 
   &:focus {
