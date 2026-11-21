@@ -10,3 +10,8 @@ export type FieldName = keyof FormValues;
 export type FormErrors = Record<FieldName, string>;
 
 export type FormTouched = Record<FieldName, boolean>;
+
+export interface Session {
+  role: "admin" | "user";
+  name: string;
+}
