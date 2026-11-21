@@ -12,6 +12,16 @@ Lab 4: registration panel with client-side validation:
 - Submit button is disabled until all fields are valid;
 - valid data is printed to the console (console.log) and shown in a pop-up.
 
+Lab 5: data encryption in a web app:
+
+- three pages: login / registration (`/`), admin page (`/admin`), user page (`/user`);
+- admin data is stored in a JSON database on the server (`data/db.json`) and checked through the `/api/login` API route;
+- on registration user data is encrypted with the Vigenere cipher (symmetric key) and saved to Local Storage;
+- the admin page shows a table of all users with decrypted data;
+- the user page contains information about symmetric encryption.
+
+Admin: admin@admin.com / Admin123!
+
 Run locally:
 
 ```bash
