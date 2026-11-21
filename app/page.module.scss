@@ -1,0 +1,25 @@
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab,
+.active {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #4a90e2;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #4a90e2;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.error {
+  color: #d93025;
+  font-size: 14px;
+}
